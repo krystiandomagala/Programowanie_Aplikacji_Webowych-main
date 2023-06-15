@@ -1,0 +1,87 @@
+.dashboard-content-wrapper {
+  max-width: 1200px;
+  padding: 40px 60px;
+  display: flex;
+  color: white;
+
+  .header {
+    h1,
+    p {
+      padding-bottom: 30px;
+    }
+  }
+
+  .card {
+    color: white;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #2f303a;
+    h2 {
+      margin-right: 20px;
+    }
+
+    .functionalities-header, .tasks-header {
+      justify-content: space-between;
+      display: flex;
+    }
+
+    .functionalities-list, .functionalities-task-list{
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 4px;
+        background-color: #444654;
+    }
+
+    .kanban{
+      margin: 10px 0 0 0;
+      border-radius: 4px;
+      background-color: #2f303a;
+      display: flex;
+      justify-content:space-around;
+      flex-direction: row;
+      padding: 15px;
+
+      .kanban-item{
+        padding-top: 10px;
+      }
+    }
+
+
+
+    .functionalities-name{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        font-size: 24px;
+        border-bottom: 1px solid white;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+      }
+
+    .task-state-list{
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 15px;
+      display: flex;
+      background-color: #2f303a;
+      align-items: center;
+      border-radius: 4px;
+      
+    .options-wrapper{
+      display: flex;
+      align-items: center;
+
+      .option{
+        margin-top: 5px;
+        margin-left: 12px;
+      }
+    }
+
+      
+      button{
+        margin-left: 10px;
+      }
+    }
+  }
+}

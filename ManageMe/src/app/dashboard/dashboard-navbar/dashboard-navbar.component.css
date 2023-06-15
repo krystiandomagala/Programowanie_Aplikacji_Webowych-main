@@ -1,0 +1,17 @@
+.navbar-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  justify-content: space-between;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user div {
+  margin-right: 15px;
+  font-weight: 500;
+  font-size: 18px;
+}

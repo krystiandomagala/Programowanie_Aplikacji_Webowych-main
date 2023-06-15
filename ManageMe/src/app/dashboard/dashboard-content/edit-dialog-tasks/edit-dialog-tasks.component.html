@@ -1,0 +1,9 @@
+<div class="edit-task-inside">
+    <h1 class="title">Edit task name</h1>
+    <div>
+      <input type="text" [(ngModel)]="newTaskName"placeholder="New task name" />
+    </div>
+    <div class="edit-task-buttons">
+      <button class="btn btn-outline-success" (click)="updateTask()">Save changes</button>
+    </div>
+  </div>

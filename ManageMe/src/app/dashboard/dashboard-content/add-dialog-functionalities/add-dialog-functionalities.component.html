@@ -1,0 +1,12 @@
+<div class="add-functionality-inside">
+  <h1 class="title">Add functionality</h1>
+  <div>
+    <input type="text" [(ngModel)]="functionallityName" name="name" placeholder="Functionality name" />
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="functionallityDesc" description="description" placeholder="Functionality description" />
+  </div>
+  <div class="add-functionality-buttons">
+    <button class="btn btn-outline-success" (click)="onAdd()">Add</button>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="dropdown" (click)="toggleDropdown($event)">
+    <span class="material-symbols-outlined">
+        more_vert
+        </span>
+    <div class="dropdown-content" *ngIf="dropdownActive">
+      <button (click)="openEditDialogTasks(data.functionalityID, taskData.taskID)">Edit task</button>
+      <button (click)="deleteTask(data.functionalityID, taskData.taskID)">Delete task</button>
+    </div>
+  </div>
+  

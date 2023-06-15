@@ -1,0 +1,102 @@
+<div class="dashboard-content-wrapper">
+  <div *ngFor="let project of projectList">
+    <div class="header">
+      <h1>{{ project.title }}</h1>
+      <p>{{ project.description }}</p>
+    </div>
+
+    <div class="project-details">
+      <div class="functionalities card">
+        <div class="functionalities-header">
+          <h2>Functionalities</h2>
+          <div>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              (click)="openAddDialogFunctionalities()"
+            >
+              + Add functionality
+            </button>
+          </div>
+        </div>
+        <div
+          class="functionalities-list"
+          *ngFor="let functionality of loadProjects"
+        >
+          <div class="functionality-info">
+            <div class="functionalities-name">
+              <div>
+                {{ functionality.name }}
+              </div>
+              <app-dropdown [data]="functionality"></app-dropdown>
+            </div>
+            <div class="functionalities-description">
+              {{ functionality.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tasks card">
+        <div class="tasks-header">
+          <h2 class="titles">Tasks</h2>
+        </div>
+
+        <div *ngFor="let functionality of loadProjects">
+          <div class="functionalities-task-list">
+            <p class="functionalities-name">{{ functionality.name }}</p>
+            <div *ngFor="let task of functionality.tasks">
+              <div class="task-state-list">
+                <div>
+                  {{ task.name }}
+                </div>
+                <div class="options-wrapper">
+                  <select
+                    class="task-state form-select"
+                    [(ngModel)]="task.state"
+                    (change)="saveToLocal($event.target, task)"
+                  >
+                    <option value="To Do" selected>To do</option>
+                    <option value="Doing">Doing</option>
+                    <option value="Done">Done</option>
+                  </select>
+                  <app-dropdown-task
+                    [data]="functionality"
+                    [taskData]="task"
+                    class="option"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="kanban">
+              <div>
+                <h5>To do</h5>
+                <div *ngFor="let task of functionality.tasks">
+                  <div *ngIf="isToDo(task.state)"class="kanban-item">
+                  {{task.name}}
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h5>Doing</h5>
+                <div *ngFor="let task of functionality.tasks">
+                  <div *ngIf="isDoing(task.state)"  class="kanban-item">
+                  {{task.name}}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h5>Done</h5>
+                <div *ngFor="let task of functionality.tasks" >
+                  <div *ngIf="isDone(task.state)"class="kanban-item">
+                  {{task.name}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
